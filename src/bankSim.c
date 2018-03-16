@@ -1,4 +1,4 @@
-#include <stdio.h> //Çaðatay AYDIN 2015010206034
+#include <stdio.h> 
 #include <stdlib.h>
 #include <time.h>
 #include <conio.h>
@@ -14,13 +14,13 @@ typedef struct {
 	struct node *rear;
 } queue;
 void initialize(queue *q) {
-	q->cnt = 0; //müþteri sayýsýný ölçen counter
+	q->cnt = 0; //mÃ¼ÅŸteri sayÄ±sÄ±nÄ± Ã¶lÃ§en counter
 	q->front = q->rear = NULL;
 }
-int isEmpty(queue *q) { //boþ mu kontrolü
+int isEmpty(queue *q) { //boÅŸ mu kontrolÃ¼
 	return (q->cnt == 0);
 }
-int isFull(queue *q) { //dolu mu kontrolü
+int isFull(queue *q) { //dolu mu kontrolÃ¼
 	return (q->cnt == boyut);
 }
 int dequeue(queue *q) {
@@ -51,12 +51,12 @@ void enqueue(queue *q, int a) {
 }
 int dondur(int a) {
 	int rastgele;
-	rastgele = rand() % (4 + 1 - 1) + 1; //1-4 arasýnda iþlem otomatik seçiliyor
+	rastgele = rand() % (4 + 1 - 1) + 1; //1-4 arasÄ±nda iÅŸlem otomatik seÃ§iliyor
 	if (rastgele == 1) { //eft istiyordur 3-10dk
 		a = rand() % (10 + 1 - 3) + 3;
 		printf("\nEft islemi gerceklestirelecek islem suresi %d dakika\t\t", a);
 	}
-	if (rastgele == 2) { //para çekmek istiyordur 1-7dk
+	if (rastgele == 2) { //para Ã§ekmek istiyordur 1-7dk
 		a = rand() % (7 + 1 - 1) + 1;
 		printf("\nPara cekme islemi gerceklestirelecek islem suresi %d dakika \t",a);
 	}
@@ -87,15 +87,15 @@ int main() {
 	int i = 0, f = 0, g = 0, o = 0, c1 = 0, c2 = 0, c3 = 0, a1 = 0, a2 = 0, a3 = 0;
 	queue *q = (queue*) malloc(sizeof(queue));
 	initialize(q); //ilk degerlere null atama islemi
-	queue *q1 = (queue*) malloc(sizeof(queue)); //ilk çalýþan
+	queue *q1 = (queue*) malloc(sizeof(queue)); //ilk Ã§alÄ±ÅŸan
 	initialize(q1); //ilk degerlere null atama islemi
-	queue *q2 = (queue*) malloc(sizeof(queue)); //ikinci çalýþan
+	queue *q2 = (queue*) malloc(sizeof(queue)); //ikinci Ã§alÄ±ÅŸan
 	initialize(q2); //ilk degerlere null atama islemi
-	queue *q3 = (queue*) malloc(sizeof(queue)); //üçüncü çalýþan
+	queue *q3 = (queue*) malloc(sizeof(queue)); //Ã¼Ã§Ã¼ncÃ¼ Ã§alÄ±ÅŸan
 	initialize(q3); //ilk degerlere null atama islemi
 	while (zaman < N + 10) { //dongu en fazla N+10 defa donecek cogu zaman donguden erken ciktigi icin dinamik calisabiliyor.
 		//N+10 olmasinin sebebi donguden erken cikmasini engellemek.
-		d = rand() % (5 + 1 - 0) + 0;//musterinin gelmesi 0-5dk. . . ayný anda birden fazla musterinin gelmesi dahil degildir.
+		d = rand() % (5 + 1 - 0) + 0;//musterinin gelmesi 0-5dk. . . aynÄ± anda birden fazla musterinin gelmesi dahil degildir.
 		printf("\n%d. Musteri bankaya %d. dakikada geldi", ++i, zaman);
 		a = dondur(a);			//yapilacak olan islemin suresini olusturma
 		enqueue(q, a);			//musteriyi genel kuyruga ekleme
